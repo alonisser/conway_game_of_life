@@ -6,8 +6,10 @@ from lib.generation import resolve_next_generation
 
 
 class GenerationCreatorTestCase(unittest.TestCase):
+
     def test_all_dead_generation_resolves_to_all_dead_generation(self):
         original_generation = np.array([[0, 0, 0, 0],
+                                        [0, 0, 0, 0],
                                         [0, 0, 0, 0],
                                         [0, 0, 0, 0]])
 

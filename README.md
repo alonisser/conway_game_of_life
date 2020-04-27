@@ -15,6 +15,20 @@ How should we handle "edge of the board cells"? The original rules handle the bo
 and an "auto growing" board would make implementation a bit more complex so for now we'll handle "out of board" cells boarding
 the "edge of board" cells as "dead"
 
+## Future considerations
+
+* Using sparse representation of the board
+
+## Follow the process
+
+* Developed by TDD, see different steps with git tags v1 => v9
+
+## What's next
+
+1. Implement a UI using curses or something else
+2. User input
+3. Discovering patterns
+
 ## Tech:
 * python 3 + curses lib
 * pytest for testing
@@ -23,5 +37,6 @@ the "edge of board" cells as "dead"
 
 ## Install
 ```bash
+# Preferably in a virtualenv
 pip install requirements.txt
 ```

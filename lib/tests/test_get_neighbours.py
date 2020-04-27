@@ -28,5 +28,20 @@ class NeighboursTestCase(unittest.TestCase):
                                     ])
         assert_array_equal(sub_matrix, expected_matrix)
 
+    def test_neighbours_for_lower_corners(self):
+        generation = np.array([[0, 0, 0, 0, 0],
+                               [0, 0, 0, 0, 0],
+                               [0, 0, 0, 1, 0],
+                               [1, 0, 0, 0, 0]])
+        sub_matrix = get_neighbours((3, 4), generation)
+        expected_matrix = np.array([[1, 0],
+                                    [0, 0]])
+        assert_array_equal(sub_matrix, expected_matrix)
+
+        sub_matrix = get_neighbours((3, 0), generation)
+        expected_matrix = np.array([[0, 0],
+                                    [1, 0]])
+        assert_array_equal(sub_matrix, expected_matrix)
+
 if __name__ == '__main__':
     unittest.main()

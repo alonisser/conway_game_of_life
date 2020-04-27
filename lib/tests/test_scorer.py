@@ -61,5 +61,6 @@ class ScorerTestCase(unittest.TestCase):
         score = calculate_score(matrix, 0)
         self.assertEqual(score, 0)
 
+
 if __name__ == '__main__':
     unittest.main()

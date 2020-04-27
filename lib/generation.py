@@ -11,7 +11,8 @@ def resolve_next_generation(generation: np.ndarray) -> np.ndarray:
     for addr, value in np.ndenumerate(generation):
         sub_matrix = get_neighbours(address=addr, matrix=generation)
         # Can you spot the bug?
-        next_generation[addr] = calculate_score(sub_matrix, value)
+        score = calculate_score(sub_matrix, value)
+        next_generation[addr[0], addr[1]] = score
 
     return next_generation
 
@@ -21,8 +22,8 @@ def get_neighbours(address, matrix: np.ndarray) -> np.ndarray :
     column = address[1]
     # Can you spot the bug?
     first_row = row - 1
-    last_row = row + 1
+    last_row = row + 2
     first_column = column -1
-    last_column = column + 1
+    last_column = column + 2
     sub_matrix = matrix[first_row: last_row, first_column: last_column]
     return sub_matrix

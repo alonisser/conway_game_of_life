@@ -20,10 +20,9 @@ def resolve_next_generation(generation: np.ndarray) -> np.ndarray:
 def get_neighbours(address, matrix: np.ndarray) -> np.ndarray :
     row = address[0]
     column = address[1]
-    # Can you spot the bug?
-    first_row = row - 1
+    first_row = row - 1 if row > 0 else 0
     last_row = row + 2
-    first_column = column -1
+    first_column = column -1 if column > 0 else 0
     last_column = column + 2
     sub_matrix = matrix[first_row: last_row, first_column: last_column]
     return sub_matrix

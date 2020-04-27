@@ -46,7 +46,20 @@ class GenerationCreatorTestCase(unittest.TestCase):
 
         assert_array_equal(expected_generation, new_generation)
 
-    
+    def test_3_neighbour_cell_in_row_keep_inner_cell_only_alive_and_create_new_lives(self):
+        original_generation = np.array([[0, 0, 0, 0, 0],
+                                        [0, 1, 1, 1, 0],
+                                        [0, 0, 0, 0, 0],
+                                        [0, 0, 0, 0, 0]])
+
+        new_generation = resolve_next_generation(original_generation)
+
+        expected_generation = np.array([[0, 0, 1, 0, 0],
+                                        [0, 0, 1, 0, 0],
+                                        [0, 0, 1, 0, 0],
+                                        [0, 0, 0, 0, 0]])
+
+        assert_array_equal(expected_generation, new_generation)
 
 
 if __name__ == '__main__':

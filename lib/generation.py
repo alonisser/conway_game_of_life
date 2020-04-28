@@ -1,7 +1,6 @@
-
 import numpy as np
 
-from lib.scorer import calculate_score
+from scorer import calculate_score
 
 
 def resolve_next_generation(generation: np.ndarray) -> np.ndarray:
@@ -17,16 +16,21 @@ def resolve_next_generation(generation: np.ndarray) -> np.ndarray:
     return next_generation
 
 
-def get_neighbours(address, matrix: np.ndarray) -> np.ndarray :
+def get_neighbours(address, matrix: np.ndarray) -> np.ndarray:
     row = address[0]
     column = address[1]
     first_row = row - 1 if row > 0 else 0
     last_row = row + 2
-    first_column = column -1 if column > 0 else 0
+    first_column = column - 1 if column > 0 else 0
     last_column = column + 2
     sub_matrix = matrix[first_row: last_row, first_column: last_column]
     return sub_matrix
 
-def generate_random_generation(x_size:int, y_size:int, number_of_live_cells:int) -> np.ndarray:
-    shape = (x_size, y_size)
-    return np.empty(shape)
+
+def generate_random_generation(x_size: int, y_size: int, number_of_live_cells: int) -> np.ndarray:
+    total_cells = x_size * y_size
+    generation = np.array([1] * number_of_live_cells + [0] * (total_cells - number_of_live_cells)).reshape(
+        (x_size, y_size))
+    np.random.shuffle(generation)
+
+    return generation

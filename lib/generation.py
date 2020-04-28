@@ -26,3 +26,7 @@ def get_neighbours(address, matrix: np.ndarray) -> np.ndarray :
     last_column = column + 2
     sub_matrix = matrix[first_row: last_row, first_column: last_column]
     return sub_matrix
+
+def generate_random_generation(x_size:int, y_size:int, number_of_live_cells:int) -> np.ndarray:
+    shape = (x_size, y_size)
+    return np.empty(shape)

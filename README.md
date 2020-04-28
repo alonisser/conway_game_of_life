@@ -25,8 +25,8 @@ the "edge of board" cells as "dead"
 
 ## What's next
 
-1. Implement a UI using curses or something else
-2. User input
+1. ~Implement a UI using curses or something else~
+2. ~User input~
 3. Discovering patterns
 
 ## Tech:

@@ -29,8 +29,8 @@ def get_neighbours(address, matrix: np.ndarray) -> np.ndarray:
 
 def generate_random_generation(x_size: int, y_size: int, number_of_live_cells: int) -> np.ndarray:
     total_cells = x_size * y_size
-    generation = np.array([1] * number_of_live_cells + [0] * (total_cells - number_of_live_cells)).reshape(
+    arr = np.array([1] * number_of_live_cells + [0] * (total_cells - number_of_live_cells))
+    np.random.shuffle(arr)
+    generation = arr.reshape(
         (x_size, y_size))
-    np.random.shuffle(generation)
-
     return generation

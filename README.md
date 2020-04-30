@@ -25,9 +25,12 @@ the "edge of board" cells as "dead"
 
 ## What's next
 
+
 1. ~Implement a UI using curses or something else~
 2. ~User input~
-3. Discovering patterns
+3. Discovering patterns (stable. oscilloscope, glider, etc)
+4. Let's build a randomized runs result storage
+5. A decision tree? other model for discovering patterns
 
 ## Tech:
 * python 3 + curses lib

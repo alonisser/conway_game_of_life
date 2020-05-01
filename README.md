@@ -21,7 +21,7 @@ the "edge of board" cells as "dead"
 
 ## Follow the process
 
-* Developed by TDD, see different steps with git tags v1 => v9
+* Developed by TDD, see different steps with git tags v1 => v15
 
 ## What's next
 
